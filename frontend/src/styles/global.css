@@ -1,0 +1,305 @@
+/* Global Styles for Badminton Sport Manager */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 2rem; }
+
+.ml-1 { margin-left: 0.25rem; }
+.ml-2 { margin-left: 0.5rem; }
+.ml-3 { margin-left: 1rem; }
+
+.mr-1 { margin-right: 0.25rem; }
+.mr-2 { margin-right: 0.5rem; }
+.mr-3 { margin-right: 1rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 2rem; }
+
+/* Badminton Specific Styles */
+.court-background {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.shuttlecock-icon {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.shuttlecock-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.score-number {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Tournament Bracket Styles */
+.bracket-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 2rem;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.bracket-round {
+  flex: 1;
+  min-width: 200px;
+  margin: 0 1rem;
+}
+
+.bracket-match {
+  background: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.bracket-match:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.bracket-player {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.bracket-player.winner {
+  background-color: #e8f5e9;
+  font-weight: bold;
+}
+
+.bracket-score {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Queue Styles */
+.queue-card {
+  transition: all 0.3s ease;
+}
+
+.queue-card.position-1 {
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+  color: white;
+}
+
+.queue-card.position-2 {
+  background: linear-gradient(135deg, #cac531 0%, #f3f9a7 100%);
+}
+
+.queue-card.position-3 {
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
+}
+
+/* Loading Animation */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2e7d32;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Toast Customization */
+.custom-toast-success {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.custom-toast-error {
+  background: linear-gradient(135deg, #f44336, #da190b);
+  color: white;
+}
+
+.custom-toast-info {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  .score-number {
+    font-size: 2rem;
+  }
+  
+  .bracket-container {
+    padding: 1rem;
+  }
+  
+  .bracket-round {
+    min-width: 150px;
+    margin: 0 0.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    background: white;
+  }
+  
+  .bracket-match {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+  }
+  
+  .bracket-match {
+    background: #1e1e1e;
+    color: white;
+  }
+  
+  .bracket-player {
+    border-bottom-color: #333;
+  }
+}
