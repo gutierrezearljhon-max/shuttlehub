@@ -11,7 +11,10 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: "https://shuttlehub-pi.vercel.app/", 
+    origin: [
+      'http://localhost:3000',
+      "https://shuttlehub-pi.vercel.app"
+    ], 
     methods: ["GET", "POST", "PUT", "DELETE"]
   }
 });
